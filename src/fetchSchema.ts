@@ -34,7 +34,7 @@ function assertNoGraphQLErrors(data: {errors?: unknown[]}) {
 async function saveSchema(data: {data?: IntrospectionQuery}) {
     if ('data' in data && data.data) {
         const schema = printSchema(buildClientSchema(data.data))
-        const schemaDir = process.env.SCHEMA_DIR ?? 'src/graphql'
+        const schemaDir = process.env.OUTPUT_SCHEMA_DIR ?? 'src/graphql'
         if (schema) fs.writeFileSync(`${schemaDir}/schema.graphql`, schema)
     } else {
         console.error('Unexpected response:', data)

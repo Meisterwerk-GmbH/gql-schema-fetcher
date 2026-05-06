@@ -9,11 +9,11 @@ export async function fetchData(options: {loadEnvFiles?: boolean} = {}) {
         process.exit(1)
     }
     process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0'
-    return fetchEndpoint(httpEndpoint);
+    return fetchEndpoint(httpEndpoint, env.HTTP_SCHEMA_PATH ?? '/api/graphql');
 }
 
-async function fetchEndpoint(httpEndpoint: string) {
-    return await fetch(`${httpEndpoint}/api/graphql`, {
+async function fetchEndpoint(httpEndpoint: string, schemaPath: string) {
+    return await fetch(`${httpEndpoint}${schemaPath}`, {
         method: 'POST',
         headers: {
             Accept: 'application/json',
