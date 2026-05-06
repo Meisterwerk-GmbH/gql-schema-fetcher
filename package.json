@@ -1,0 +1,19 @@
+{
+  "name": "gql-schema-fetcher",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "fetch-schema": "tsx src/fetchSchema.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "graphql": "^16.8.1",
+    "vite": "^8.0.10"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.39",
+    "tsx": "^4.6.0",
+    "typescript": "^5.3.0"
+  }
+}

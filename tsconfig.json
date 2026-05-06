@@ -1,7 +1,13 @@
 {
-  "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "strict": true
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "strict": true,
+    "types": ["node"],
+    "lib": ["ES2022", "DOM"],
+    "skipLibCheck": true,
+    "noEmit": true
   },
-  "files": ["fetchSchema.ts"]
+  "files": ["src/fetchSchema.ts"]
 }
